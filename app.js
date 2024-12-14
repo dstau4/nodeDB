@@ -21,12 +21,13 @@ db.query("SELECT * FROM capitals", (err, res) => {
     console.error("Error executing query", err.stack);
   } else {
     quiz = res.rows;
-    console.log(quiz);
+    return
+    // console.log(quiz);
   }
   db.end();
 });
 
-// console.log(quiz);
+console.log(quiz);
 
 app.listen(3000, () => {
     console.log(`Server listening on port ${port}`);
